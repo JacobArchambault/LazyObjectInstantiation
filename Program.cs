@@ -6,7 +6,17 @@ namespace LazyObjectInstantiation
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("***** Fun with Lazy Instatiation *****\n");
+
+            // No allocation of AllTracks object here!
+            MediaPlayer myPlayer = new MediaPlayer();
+            myPlayer.Play();
+
+            // Allocation of AllTracks happens when you call GetAllTracks().
+            MediaPlayer yourPlayer = new MediaPlayer();
+            AllTracks yourMusic = yourPlayer.GetAllTracks();
+
+            Console.ReadLine();
         }
     }
 }
