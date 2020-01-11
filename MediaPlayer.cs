@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace LazyObjectInstantiation
 {
@@ -10,7 +8,7 @@ namespace LazyObjectInstantiation
         public void Play() { /* Play a song */}
         public void Pause() { /* Pause the song */}
         public void Stop() { /* Stop playback*/}
-        private Lazy<AllTracks> allSongs = new Lazy<AllTracks>(() =>
+        private readonly Lazy<AllTracks> allSongs = new Lazy<AllTracks>(() =>
         {
             Console.WriteLine("Creating AllTracksObject!");
             return new AllTracks();

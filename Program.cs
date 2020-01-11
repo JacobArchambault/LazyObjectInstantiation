@@ -4,7 +4,7 @@ namespace LazyObjectInstantiation
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Console.WriteLine("***** Fun with Lazy Instatiation *****\n");
 
@@ -14,7 +14,7 @@ namespace LazyObjectInstantiation
 
             // Allocation of AllTracks happens when you call GetAllTracks().
             MediaPlayer yourPlayer = new MediaPlayer();
-            AllTracks yourMusic = yourPlayer.GetAllTracks();
+            _ = yourPlayer.GetAllTracks();
 
             Console.ReadLine();
         }
